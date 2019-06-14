@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
     order  = create_order(charge)
 
     if order.valid?
-      OrderMailer.order_email(order).deliver_now 
+      OrderMailer.order_email(order, cart_total).deliver_now 
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
     else
@@ -59,11 +59,9 @@ class OrdersController < ApplicationController
 
 def cart_total 
   total = 0
-  enhanced_cart.each do |product_id, details|
-    if p = Product.find_by(id: product_id)
-      total += p.price_cents * details['quantity'].to_i
-    end
+  enhanced_cart.each do |item|
+      total += item[:product].price_cents * item[:quantity]
   end
-  total 
+  total.to_i/100.00 
 end
 end
