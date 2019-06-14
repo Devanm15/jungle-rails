@@ -141,19 +141,19 @@ product1.save
 product1.reviews.create!(
   user: user1,
   description: "This is awesome", 
-  rating: "5"
+  rating: 5
 )
 
 product2.reviews.create!(
   user: user1,
   description: "How awesome is this", 
-  rating: "4"
+  rating: 4
 )
 
 product1.reviews.create!(
   user: user1,
   description: "Its ok", 
-  rating: "2"
+  rating: 2
 )
 
 
