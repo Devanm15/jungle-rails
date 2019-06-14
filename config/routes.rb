@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/users' => 'user#create'
 
   resources :products, only: [:index, :show] do
-    resource :reviews
+    resources :reviews
   end
   resources :categories, only: [:show]
 
