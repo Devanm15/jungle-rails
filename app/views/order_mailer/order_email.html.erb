@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  <h1>Hello!</h1>
+    <p>
+      Thank you for your order <br>
+      Details of your order are below:
+    </p>
+    <p>Order: <%= @order.id %></p>
+    <table>
+  <tr>
+    <td><b>Product: </b></td>
+    <td><b>Item Price</b></td>
+    <td><b>Quantity</b></td>
+    <td><b>Total_price</b></td>
+  </tr>
+
+  <% items = LineItem.where(order_id: @order.id) %>
+  <% items.each do |item| %>
+    <% product = Product.find_by(id: item.product_id) %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= item.item_price %></td>
+      <td><%= item.quantity %></td>
+      <td><%= item.total_price %></td>
+    </tr>
+  <% end %>
+
+  <tr>
+    <td colspan=3><b>Total amount:</b></td>
+    # <td><b><%= @total_price %></b></td>
+  </tr>
+
+</table>
+  </body>
+</html>
