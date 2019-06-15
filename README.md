@@ -7,16 +7,21 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 
 1. Fork & Clone
 2. Run `bundle install` to install dependencies
-3. Create `config/database.yml` by copying `config/database.example.yml`
-4. Create `config/secrets.yml` by copying `config/secrets.example.yml`
-5. Run `bin/rake db:reset` to create, load and seed db
-6. Create .env file based on .env.example
-7. Sign up for a Stripe account
-8. Put Stripe (test) keys into appropriate .env vars
 9. Run `bin/rails s -b 0.0.0.0` to start the server
 
 ##Screenshots
+!["Main Page"](https://github.com/Devanm15/jungle-rails/blob/master/Screenshots/catelog-main-page.png)
 
+!["Product Page with Multiple Reviews"](https://github.com/Devanm15/jungle-rails/blob/master/Screenshots/product-multiple-review.png)
+
+!["Product Page with Review form"](https://github.com/Devanm15/jungle-rails/blob/master/Screenshots/product-review-form.png)
+
+!["Admin Category Page"](https://github.com/Devanm15/jungle-rails/blob/master/Screenshots/Admin-Category.png)
+
+!["Product Page with Multiple Reviews"](https://github.com/Devanm15/jungle-rails/blob/master/Screenshots/Admin-category-created.png)
+
+
+!["Shopping Cart"](https://github.com/Devanm15/jungle-rails/blob/master/Screenshots/shopping-cart.png)
 
 ## Stripe Testing
 
