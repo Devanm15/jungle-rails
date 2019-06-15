@@ -26,31 +26,28 @@
       </div>
       <div class="col-sm-8">
       <dl class="dl-horizontal">
-      <h4>Reviews</h4>
+      <h2>Reviews</h2>
           <% @reviews.each do |review| %>
-            
-            <dt>User:</dt>
+            <hr>
             <dd><%= review.user.first_name %> </dd>
-            <dt>Review:</dt>
             <dd> <%= review.description %></dd>
             <dd>Rating: <%= review.rating %></dd>
-            <dd><%=review.created_at.strftime("%D") %></dd>
-
+            <dd><%=review.created_at %></dd>
+          </hr>
             <% if current_user == review.user %>
-           <dd>
+           <dd class=button>
            <%= button_to "Delete",[@product, review], :method => :delete %>
-            <button type="button">Delete</button></dd>
-      
+            </dd>
             <% end %>
             <% end %>
-          
+            
             </dl>
             </div>
     </div>
     <div class="row">
     <div>
     <%= form_for :review, url: product_reviews_url(@product) do |f| %>
-      <h2>New review</h2>
+      <h2>Create New review</h2>
       <% if current_user %>
       <%= f.label :description %><br>
       <%= f.text_area :description %><br>

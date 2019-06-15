@@ -65,6 +65,15 @@ main section.categories-show {
     }
 }
 
+h4 {
+    font: bold
+}
+
+.button input {
+    background-color: lavender;
+    float: right
+}
+
 main section.products-show {
     .product-detail {
         img.main-img {
