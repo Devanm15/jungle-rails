@@ -7,6 +7,11 @@
   </header>
    <p class="description">
      <%= product.description %>
+     
+     <p> Rating: 
+    <%= product.reviews.average(:rating).to_s %>/ 5
+    </p>
+  
    </p>
   <footer class="actions">
   <% if product.quantity == 0 %>
